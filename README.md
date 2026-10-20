@@ -19,6 +19,8 @@ Management-as-a-service for MSMEs and startups that need the right team to grow.
 ## Status
 Design phase in progress (brand brief, tokens, sitemap, copy deck, contact flow, home wireframe in `design/`).
 
+Hi-fi prototype: `frontend/index.html` (open via a local server, e.g. `cd frontend && python3 -m http.server`).
+
 ## Tech stack (decided)
 - Frontend: HTML, CSS, JavaScript (no framework)
 - Backend: Python (framework to be chosen, e.g. Flask or FastAPI)

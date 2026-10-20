@@ -1,0 +1,29 @@
+/* Ponte design tokens, draft v0.1 */
+:root {
+  /* Colour */
+  --cream: #FBF6EE;
+  --sand: #F1E7D6;
+  --ink: #12383C;        /* deep teal, body text */
+  --ink-soft: #3F5F62;   /* secondary text */
+  --terracotta: #B4441F; /* primary accent / buttons */
+  --terracotta-dark: #8F3416;
+  --amber: #E8A33D;      /* highlights, decorative only */
+  --white: #FFFFFF;
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.5rem;
+  --text-hero: clamp(2.5rem, 6vw, 4rem);
+
+  /* Space and shape */
+  --space-1: 4px;  --space-2: 8px;  --space-3: 16px;
+  --space-4: 24px; --space-5: 40px; --space-6: 64px; --space-7: 96px;
+  --radius-sm: 8px; --radius-md: 16px; --radius-lg: 28px; --radius-pill: 999px;
+  --container: 1120px;
+  --gutter: 16px;
+}

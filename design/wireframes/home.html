@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ponte Home Wireframe</title>
+<link rel="stylesheet" href="../design-tokens.css">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font:var(--text-base)/1.6 var(--font-body)}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+  section{padding:var(--space-6) 0}
+  section.alt{background:var(--sand)}
+  h1,h2,h3{font-family:var(--font-display);line-height:1.15;margin:0 0 var(--space-3)}
+  h1{font-size:var(--text-hero)} h2{font-size:var(--text-2xl)} h3{font-size:var(--text-lg)}
+  p{margin:0 0 var(--space-3);color:var(--ink-soft)}
+  .btn{display:inline-block;background:var(--terracotta);color:var(--white);padding:14px 28px;border-radius:var(--radius-pill);text-decoration:none;font-weight:600;border:0;font:inherit;font-weight:600;cursor:pointer}
+  .btn:hover{background:var(--terracotta-dark)}
+  .link{color:var(--terracotta-dark);font-weight:600;margin-left:var(--space-3)}
+  header{position:sticky;top:0;background:var(--cream);border-bottom:1px solid var(--sand);z-index:5}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--ink);text-decoration:none}
+  nav a{margin-right:var(--space-4);color:var(--ink);text-decoration:none}
+  .grid{display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card{background:var(--white);border-radius:var(--radius-md);padding:var(--space-4);border:1px solid var(--sand)}
+  .ph{background:var(--sand);border:2px dashed var(--ink-soft);border-radius:var(--radius-lg);min-height:260px;display:grid;place-items:center;color:var(--ink-soft);text-align:center;padding:var(--space-3)}
+  .tag{display:inline-block;font-size:var(--text-sm);background:var(--amber);color:var(--ink);padding:2px 10px;border-radius:var(--radius-pill);margin-bottom:var(--space-2)}
+  .hero{display:grid;gap:var(--space-5);grid-template-columns:1.1fr .9fr;align-items:center}
+  .step b{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--cream);margin-bottom:var(--space-2)}
+  form{display:grid;gap:var(--space-3);max-width:560px}
+  label{font-weight:600;display:grid;gap:4px}
+  input,select,textarea{font:inherit;padding:12px;border:1px solid var(--ink-soft);border-radius:var(--radius-sm);background:var(--white);color:var(--ink)}
+  footer{background:var(--ink);color:var(--cream);padding:var(--space-5) 0}
+  footer a{color:var(--cream)}
+  .sticky-cta{display:none}
+  @media (max-width:760px){
+    nav{display:none}
+    .hero{grid-template-columns:1fr}
+    section{padding:var(--space-5) 0}
+    .sticky-cta{display:block;position:fixed;bottom:0;left:0;right:0;padding:12px var(--gutter);background:var(--cream);border-top:1px solid var(--sand);text-align:center;z-index:5}
+    body{padding-bottom:76px}
+  }
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">ponte</a>
+  <nav><a href="#services">What we manage</a><a href="#how">How it works</a><a href="#cases">Case studies</a><a href="#about">About</a></nav>
+  <a class="btn" href="#contact">Talk to us</a>
+</div></header>
+
+<section id="top"><div class="wrap hero">
+  <div>
+    <h1>The right team for your next stage of growth.</h1>
+    <p>Ponte gives MSMEs and startups the people and management they need, without the cost and wait of hiring everyone yourself.</p>
+    <a class="btn" href="#contact">Talk to us</a><a class="link" href="#how">See how it works</a>
+  </div>
+  <div class="ph">[Hero image: founder and team working together]</div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>You can't run, sell and manage everything alone.</h2>
+  <p>Growth asks for more hats than one founder can wear. Ponte steps in with experienced people who run the parts of your business you need covered, and hand them back when you are ready.</p>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <h2>What we manage</h2>
+  <p>[Final service list to be confirmed]</p>
+  <div class="grid">
+    <div class="card"><h3>Operations</h3><p>[One-line benefit]</p></div>
+    <div class="card"><h3>Finance and compliance</h3><p>[One-line benefit]</p></div>
+    <div class="card"><h3>Sales and marketing</h3><p>[One-line benefit]</p></div>
+    <div class="card"><h3>People and HR</h3><p>[One-line benefit]</p></div>
+    <div class="card"><h3>Technology and tools</h3><p>[One-line benefit]</p></div>
+  </div>
+  <p style="margin-top:24px"><a class="btn" href="#contact">Talk to us</a></p>
+</div></section>
+
+<section id="how" class="alt"><div class="wrap">
+  <h2>How it works</h2>
+  <div class="grid">
+    <div class="step"><b>1</b><h3>Talk</h3><p>Tell us where you are and where you want to be.</p></div>
+    <div class="step"><b>2</b><h3>Match</h3><p>We put together the right team for your goals.</p></div>
+    <div class="step"><b>3</b><h3>Start</h3><p>We plug in, set clear targets and work alongside you.</p></div>
+    <div class="step"><b>4</b><h3>Grow</h3><p>Regular reviews; scale up, down or hand over as you need.</p></div>
+  </div>
+  <p style="margin-top:24px"><a class="btn" href="#contact">Talk to us</a></p>
+</div></section>
+
+<section id="cases"><div class="wrap">
+  <h2>Case studies</h2>
+  <div class="grid">
+    <div class="card"><span class="tag">PLACEHOLDER</span><h3>[Industry]</h3><p>Challenge: [ ]<br>What Ponte did: [ ]<br>Result: [real figures only]</p></div>
+    <div class="card"><span class="tag">PLACEHOLDER</span><h3>[Industry]</h3><p>Challenge: [ ]<br>What Ponte did: [ ]<br>Result: [real figures only]</p></div>
+    <div class="card"><span class="tag">PLACEHOLDER</span><h3>[Industry]</h3><p>Challenge: [ ]<br>What Ponte did: [ ]<br>Result: [real figures only]</p></div>
+  </div>
+</div></section>
+
+<section id="about" class="alt"><div class="wrap hero">
+  <div class="ph">[Team photo]</div>
+  <div><h2>Why we built Ponte.</h2><p>[Founder story, 2–3 sentences, to be written with the team]</p></div>
+</div></section>
+
+<section><div class="wrap card" style="display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+  <div><h2 style="font-size:var(--text-xl)">Great at what you do? Join our bench.</h2><p style="margin:0">We're building a network of talent and partners.</p></div>
+  <a class="btn" href="#contact">Join as talent or partner</a>
+</div></section>
+
+<section id="contact" class="alt"><div class="wrap">
+  <h2>Let's talk about what you need, and what it costs.</h2>
+  <p>Pricing depends on your goals and team, so we'll talk it through together. No obligation.</p>
+  <form onsubmit="return false">
+    <fieldset style="border:0;padding:0;margin:0"><legend style="font-weight:600">I am a…</legend>
+      <label style="display:flex;gap:8px;font-weight:400"><input type="radio" name="role" checked> Founder or business owner</label>
+      <label style="display:flex;gap:8px;font-weight:400"><input type="radio" name="role"> Professional or partner who wants to join</label>
+    </fieldset>
+    <label>Your name <input required></label>
+    <label>Work email <input type="email" required></label>
+    <label>Company name <input></label>
+    <label>Stage and size <select><option>Just starting</option><option>Growing (under 20 people)</option><option>Established (20+)</option></select></label>
+    <label>What do you need help with? <select multiple size="4"><option>Operations</option><option>Finance and compliance</option><option>Sales and marketing</option><option>People and HR</option><option>Technology and tools</option><option>Not sure yet</option></select></label>
+    <label>Anything else we should know? <textarea rows="3" maxlength="500"></textarea></label>
+    <label style="display:flex;gap:8px;font-weight:400"><input type="checkbox" required> I agree to Ponte contacting me about my enquiry.</label>
+    <button class="btn" type="submit">Send my details</button>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <strong style="font-family:var(--font-display);font-size:1.4rem">ponte</strong>
+  <p style="color:var(--cream)">[email] · [social links] · <a href="#">Privacy policy</a></p>
+  <p style="color:var(--cream);margin:0">© [year] Ponte. All rights reserved.</p>
+</div></footer>
+
+<div class="sticky-cta"><a class="btn" href="#contact">Talk to us</a></div>
+</body>
+</html>

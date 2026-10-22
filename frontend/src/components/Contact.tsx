@@ -1,5 +1,7 @@
-import { useRef, useState, type FormEvent } from 'react'
+import { useRef, useState, type FormEvent, type ReactNode } from 'react'
 import { ApiError, submitContact, type ContactRole } from '../lib/api'
+
+export const CONTACT_EMAIL = 'hello@ponte.co.in'
 
 const NEEDS = [
   ['eng', 'Software and DevOps engineers'],
@@ -11,14 +13,14 @@ const NEEDS = [
 
 const STAGES = ['Just starting', 'Growing (under 20 people)', 'Established (20+)']
 
-type Errors = Partial<Record<'name' | 'email' | 'company' | 'stage' | 'needs' | 'expertise' | 'link' | 'consent', string>>
+type Errors = Partial<Record<'name' | 'email' | 'notes' | 'expertise' | 'consent', string>>
 
 interface Props {
   role: ContactRole
   setRole: (r: ContactRole) => void
 }
 
-function Field({ id, label, error, children }: { id: string; label: string; error?: string; children: React.ReactNode }) {
+function Field({ id, label, error, children }: { id: string; label: string; error?: string; children: ReactNode }) {
   return (
     <fieldset className="fieldset">
       <label htmlFor={id} className="fieldset-legend text-base">
@@ -43,6 +45,7 @@ export default function Contact({ role, setRole }: Props) {
 
   const a11y = (id: keyof Errors) =>
     errors[id] ? { 'aria-invalid': true as const, 'aria-describedby': `${id}-err` } : {}
+  const cls = (base: string, id: keyof Errors, errorClass: string) => `${base} w-full ${errors[id] ? errorClass : ''}`
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
@@ -56,9 +59,7 @@ export default function Contact({ role, setRole }: Props) {
     if (!v('email')) next.email = 'Please enter your email.'
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) next.email = 'Please enter a valid email, like name@company.com.'
     if (role === 'founder') {
-      if (!v('company')) next.company = 'Please enter your company name.'
-      if (!v('stage')) next.stage = 'Please choose your stage and size.'
-      if (!needs.length) next.needs = "Pick at least one, or choose 'Not sure yet'."
+      if (!v('notes') && !needs.length) next.notes = 'Tell us in a line or two what you need help with.'
     } else if (!v('expertise')) next.expertise = 'Please tell us your area of expertise.'
     if (!fd.get('consent')) next.consent = 'Please tick this box so we can contact you.'
 
@@ -79,7 +80,7 @@ export default function Contact({ role, setRole }: Props) {
         phone: v('phone') || undefined,
         company: v('company') || undefined,
         stage: v('stage') || undefined,
-        needs: role === 'founder' ? needs : undefined,
+        needs: role === 'founder' && needs.length ? needs : undefined,
         expertise: v('expertise') || undefined,
         link: v('link') || undefined,
         notes: v('notes') || undefined,
@@ -94,7 +95,7 @@ export default function Contact({ role, setRole }: Props) {
           ? 'Too many attempts from your network. Please try again in a few minutes.'
           : status === 422
             ? 'Some details look invalid. Please check the form and try again.'
-            : 'Something went wrong on our side. Your details are still here. Try again, or email us at hello@ponte.co.in.',
+            : `Something went wrong on our side. Your details are still here. Try again, or email us at ${CONTACT_EMAIL}.`,
       )
     } finally {
       setSending(false)
@@ -120,6 +121,12 @@ export default function Contact({ role, setRole }: Props) {
               ),
             )}
           </ul>
+          <div className="mt-8 rounded-box border border-base-300 bg-base-100 p-5">
+            <p className="font-semibold">Prefer to write to us directly?</p>
+            <a className="link link-hover inline-flex min-h-11 items-center text-lg font-semibold text-primary" href={`mailto:${CONTACT_EMAIL}`}>
+              {CONTACT_EMAIL}
+            </a>
+          </div>
         </div>
 
         <div className="lg:col-span-3">
@@ -156,61 +163,80 @@ export default function Contact({ role, setRole }: Props) {
                 </fieldset>
 
                 <Field id="name" label="Your name" error={errors.name}>
-                  <input id="name" name="name" type="text" autoComplete="name" className={`input w-full ${errors.name ? 'input-error' : ''}`} {...a11y('name')} />
+                  <input id="name" name="name" type="text" autoComplete="name" className={cls('input', 'name', 'input-error')} {...a11y('name')} />
                 </Field>
                 <Field id="email" label="Work email" error={errors.email}>
-                  <input id="email" name="email" type="email" autoComplete="email" className={`input w-full ${errors.email ? 'input-error' : ''}`} {...a11y('email')} />
-                </Field>
-                <Field id="phone" label="Phone or WhatsApp (optional)">
-                  <input id="phone" name="phone" type="tel" autoComplete="tel" className="input w-full" />
+                  <input id="email" name="email" type="email" autoComplete="email" className={cls('input', 'email', 'input-error')} {...a11y('email')} />
                 </Field>
 
                 {role === 'founder' ? (
-                  <>
-                    <Field id="company" label="Company name" error={errors.company}>
-                      <input id="company" name="company" type="text" autoComplete="organization" className={`input w-full ${errors.company ? 'input-error' : ''}`} {...a11y('company')} />
-                    </Field>
-                    <Field id="stage" label="Stage and size" error={errors.stage}>
-                      <select id="stage" name="stage" defaultValue="" className={`select w-full ${errors.stage ? 'select-error' : ''}`} {...a11y('stage')}>
-                        <option value="" disabled>
-                          Choose one
-                        </option>
-                        {STAGES.map((s) => (
-                          <option key={s}>{s}</option>
-                        ))}
-                      </select>
-                    </Field>
-                    <fieldset className="fieldset">
-                      <legend className="fieldset-legend text-base">Which roles would your pod need?</legend>
-                      <div className="grid gap-1 sm:grid-cols-2" role="group" {...(errors.needs ? { 'aria-describedby': 'needs-err' } : {})}>
-                        {NEEDS.map(([value, label]) => (
-                          <label key={value} className="flex min-h-11 cursor-pointer items-center gap-3">
-                            <input type="checkbox" name="needs" value={value} className="checkbox" />
-                            <span>{label}</span>
-                          </label>
-                        ))}
-                      </div>
-                      {errors.needs && (
-                        <p id="needs-err" role="alert" className="text-sm text-error">
-                          {errors.needs}
-                        </p>
-                      )}
-                    </fieldset>
-                  </>
+                  <Field id="notes" label="What do you need help with?" error={errors.notes}>
+                    <textarea
+                      id="notes"
+                      name="notes"
+                      maxLength={500}
+                      rows={3}
+                      placeholder="For example: two engineers to build our app, and someone to run our sales."
+                      className={cls('textarea', 'notes', 'textarea-error')}
+                      {...a11y('notes')}
+                    />
+                  </Field>
                 ) : (
                   <>
-                    <Field id="expertise" label="Area of expertise" error={errors.expertise}>
-                      <input id="expertise" name="expertise" type="text" className={`input w-full ${errors.expertise ? 'input-error' : ''}`} {...a11y('expertise')} />
+                    <Field id="expertise" label="What do you do?" error={errors.expertise}>
+                      <input
+                        id="expertise"
+                        name="expertise"
+                        type="text"
+                        placeholder="For example: DevOps, B2B sales, accounting"
+                        className={cls('input', 'expertise', 'input-error')}
+                        {...a11y('expertise')}
+                      />
                     </Field>
-                    <Field id="link" label="LinkedIn or portfolio link (optional)">
-                      <input id="link" name="link" type="url" className="input w-full" />
+                    <Field id="notes" label="Anything else we should know? (optional)">
+                      <textarea id="notes" name="notes" maxLength={500} rows={2} className="textarea w-full" />
                     </Field>
                   </>
                 )}
 
-                <Field id="notes" label="Anything else we should know? (optional)">
-                  <textarea id="notes" name="notes" maxLength={500} rows={3} className="textarea w-full" />
-                </Field>
+                <details className="collapse collapse-arrow border border-base-300 bg-base-100">
+                  <summary className="collapse-title min-h-11 font-semibold">Add more details (optional)</summary>
+                  <div className="collapse-content grid gap-1">
+                    <Field id="phone" label="Phone or WhatsApp">
+                      <input id="phone" name="phone" type="tel" autoComplete="tel" className="input w-full" />
+                    </Field>
+                    {role === 'founder' ? (
+                      <>
+                        <Field id="company" label="Company name">
+                          <input id="company" name="company" type="text" autoComplete="organization" className="input w-full" />
+                        </Field>
+                        <Field id="stage" label="Stage and size">
+                          <select id="stage" name="stage" defaultValue="" className="select w-full">
+                            <option value="">Choose one</option>
+                            {STAGES.map((s) => (
+                              <option key={s}>{s}</option>
+                            ))}
+                          </select>
+                        </Field>
+                        <fieldset className="fieldset">
+                          <legend className="fieldset-legend text-base">Which roles would your pod need?</legend>
+                          <div className="grid gap-1 sm:grid-cols-2">
+                            {NEEDS.map(([value, label]) => (
+                              <label key={value} className="flex min-h-11 cursor-pointer items-center gap-3">
+                                <input type="checkbox" name="needs" value={value} className="checkbox" />
+                                <span>{label}</span>
+                              </label>
+                            ))}
+                          </div>
+                        </fieldset>
+                      </>
+                    ) : (
+                      <Field id="link" label="LinkedIn or portfolio link">
+                        <input id="link" name="link" type="url" className="input w-full" />
+                      </Field>
+                    )}
+                  </div>
+                </details>
 
                 <div className="absolute -left-[9999px]" aria-hidden="true">
                   <label>
@@ -221,14 +247,11 @@ export default function Contact({ role, setRole }: Props) {
                 <fieldset className="fieldset">
                   <label className="flex min-h-11 cursor-pointer items-start gap-3 text-sm">
                     <input type="checkbox" name="consent" className="checkbox mt-0.5" {...a11y('consent')} />
-                    <span>
-                      I agree to Ponte contacting me about my enquiry. See our{' '}
-                      <a href="#top" className="link">
-                        privacy policy
-                      </a>
-                      .
-                    </span>
+                    <span>I agree to Ponte contacting me about my enquiry.</span>
                   </label>
+                  <p className="text-sm text-base-content/70">
+                    We use your details only to reply to your enquiry, and we don't share them with other clients.
+                  </p>
                   {errors.consent && (
                     <p id="consent-err" role="alert" className="text-sm text-error">
                       {errors.consent}

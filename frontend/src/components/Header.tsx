@@ -5,6 +5,7 @@ export const NAV = [
   { href: '#services', label: 'Your pod' },
   { href: '#why', label: 'Why Ponte' },
   { href: '#how', label: 'How it works' },
+  { href: '#faq', label: 'FAQ' },
   { href: '#about', label: 'About' },
 ]
 

@@ -4,19 +4,16 @@ One form, two paths chosen by a first question.
 
 **I am a…** (required, radio): Founder or business owner / Professional or partner who wants to join
 
-## Founder path fields
-- Your name (required)
-- Work email (required) and phone/WhatsApp (optional)
-- Company name (required)
-- Stage and size: just starting / growing (under 20 people) / established (20+) (required)
-- Which roles would your pod need? checkboxes: Software and DevOps engineers / Sales and marketing / Operations and project management / Finance, HR and admin / Not sure yet (required, at least one)
-- Anything else we should know? (optional, 500 chars)
+## Founder path (short form, updated 2026-10-22)
+Always visible: name (required), work email (required), "What do you need help with?" free text (required unless roles are picked below), consent.
+Behind "Add more details (optional)": phone or WhatsApp, company name, stage and size, which roles the pod needs (checkboxes).
 
-## Talent/partner path fields
-- Name, email (required); LinkedIn or portfolio link; area of expertise; availability
+## Talent/partner path
+Always visible: name, work email, "What do you do?" (required), optional note, consent.
+Behind "Add more details (optional)": phone or WhatsApp, LinkedIn or portfolio link.
 
 ## Consent
-Checkbox, required: "I agree to Ponte contacting me about my enquiry." Link to privacy policy.
+Checkbox, required: "I agree to Ponte contacting me about my enquiry." Under it: "We use your details only to reply to your enquiry, and we don't share them with other clients." The privacy-policy link was removed because no policy page exists yet; consent text version is `2026-10-22-v2` in the backend. A real privacy page needs counsel before it is linked again.
 
 ## States
 - **Success:** "Thanks, [name]. We'll reply within 2 working days." (confirmed by the founder)

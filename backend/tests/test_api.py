@@ -68,6 +68,24 @@ def test_founder_submission_is_stored(client):
     assert row["consent_text_version"] and row["consent_at"] and row["status"] == "new"
 
 
+def test_short_founder_form_needs_only_name_email_and_a_note(client):
+    short = {"role": "founder", "name": "Rohan", "email": "r@example.com", "notes": "Need two engineers", "consent": True}
+    assert client.post("/api/contact", json=short).status_code == 201
+    row = client.get("/api/admin/submissions", headers=admin()).json()[0]
+    assert row["company"] is None and row["stage"] is None and row["needs"] is None
+    assert row["notes"] == "Need two engineers"
+
+
+def test_founder_with_only_roles_is_accepted(client):
+    r = client.post("/api/contact", json={"role": "founder", "name": "R", "email": "r@example.com", "needs": ["eng"], "consent": True})
+    assert r.status_code == 201
+
+
+def test_founder_with_neither_note_nor_roles_is_rejected(client):
+    r = client.post("/api/contact", json={"role": "founder", "name": "R", "email": "r@example.com", "consent": True})
+    assert r.status_code == 422
+
+
 def test_talent_submission_drops_founder_fields(client):
     r = client.post("/api/contact", json=talent(company="Ignored", stage="Just starting", needs=["eng"]))
     assert r.status_code == 201
@@ -81,9 +99,8 @@ def test_talent_submission_drops_founder_fields(client):
         {"email": "nope"},
         {"name": "   "},
         {"consent": False},
-        {"company": ""},
         {"stage": "Huge"},
-        {"needs": []},
+        {"needs": [], "notes": None},
         {"needs": ["hacking"]},
         {"phone": "call me maybe"},
         {"notes": "x" * 501},

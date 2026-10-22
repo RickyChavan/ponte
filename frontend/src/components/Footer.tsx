@@ -33,8 +33,8 @@ export default function Footer() {
       <div className="border-t border-neutral-content/20 px-4 py-4 text-sm">
         <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-2">
           <span>&copy; 2026 Ponte &middot; ponte.co.in</span>
-          <a className="link link-hover inline-flex min-h-11 items-center" href="#top">
-            Privacy policy
+          <a className="link link-hover inline-flex min-h-11 items-center" href={`mailto:hello@ponte.co.in`}>
+            hello@ponte.co.in
           </a>
         </div>
       </div>

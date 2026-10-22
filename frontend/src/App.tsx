@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import { About, Hero, How, Pod, Talent, Value, Why } from './components/Sections'
+import { About, Faq, Hero, How, Pod, Talent, Value, Why } from './components/Sections'
 import type { ContactRole } from './lib/api'
 
 export default function App() {
@@ -17,6 +17,7 @@ export default function App() {
         <Pod />
         <Why />
         <How />
+        <Faq />
         <About />
         <Talent onJoin={() => setRole('talent')} />
         <Contact role={role} setRole={setRole} />

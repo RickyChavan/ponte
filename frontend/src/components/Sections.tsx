@@ -66,6 +66,14 @@ export function Value() {
           Growth asks for more hats than one founder can wear. Instead of hiring one person at a time, you get a ready
           pod of 4 to 6 people who work only for your business, managed by Ponte.
         </p>
+        <div className="mx-auto mt-8 max-w-2xl rounded-box bg-base-100 p-6 text-left">
+          <h3 className="text-xl font-semibold">So what is a pod?</h3>
+          <p className="mt-2 text-base-content/80">
+            A pod is a small team of 4 to 6 people who work only for your business. Think of it as your own team,
+            without having to hire each person yourself. Ponte puts the team together and manages it day to day, and
+            you tell it what matters most.
+          </p>
+        </div>
       </div>
     </section>
   )
@@ -173,9 +181,70 @@ export function How() {
   )
 }
 
+// TODO(founder): the answers marked "first call" are deliberately non-committal. Replace each with Ponte's real
+// terms (minimum term and exit, ownership of work, replacement of pod members, how people are chosen) once decided.
+const FAQ: [string, string][] = [
+  [
+    'What is a pod?',
+    'A small team of 4 to 6 people who work only for your business. Ponte puts the team together and manages it day to day.',
+  ],
+  [
+    'Who works in my pod?',
+    'A group chosen for your goals, from engineering and DevOps, sales and marketing, operations and project management, and finance, HR and admin.',
+  ],
+  [
+    'Will my pod work for anyone else?',
+    'No. Every pod works in isolation for one client. Your data and plans are not shared with other clients, and each client signs an NDA. Our lawyer reviews the contracts.',
+  ],
+  [
+    'What does it cost?',
+    'You pay the expenses of your own pod, plus a management fee to Ponte. Pricing depends on the roles and the team, so we go through the numbers with you on the first call.',
+  ],
+  [
+    'How long do I commit for, and how do I leave?',
+    "We settle the term and how to end it with you before your pod starts, and we're happy to go through it on the first call.",
+  ],
+  [
+    'Who owns the work the pod produces?',
+    "We settle ownership of the code, documents and data with you in your contract, and we're happy to explain it on the first call.",
+  ],
+  [
+    'What if someone in my pod leaves?',
+    "We'll walk you through how a replacement and handover would work on the first call.",
+  ],
+  ['How quickly will you reply?', 'Within 2 working days of your message.'],
+]
+
+export function Faq() {
+  return (
+    <section id="faq" className="bg-base-200 py-20">
+      <div className="mx-auto max-w-3xl px-4">
+        <Eyebrow>Questions</Eyebrow>
+        <h2 className="text-3xl font-bold md:text-4xl">Questions you may have.</h2>
+        <div className="mt-8 space-y-3">
+          {FAQ.map(([q, a], i) => (
+            <div key={q} className="collapse collapse-arrow bg-base-100">
+              <input type="radio" name="faq" defaultChecked={i === 0} aria-label={q} />
+              <div className="collapse-title min-h-11 font-semibold">{q}</div>
+              <div className="collapse-content text-base-content/80">{a}</div>
+            </div>
+          ))}
+        </div>
+        <p className="mt-6 text-base-content/80">
+          Something else?{' '}
+          <a className="link font-semibold" href="#contact">
+            Ask us
+          </a>
+          .
+        </p>
+      </div>
+    </section>
+  )
+}
+
 export function About() {
   return (
-    <section id="about" className="bg-base-200 py-20">
+    <section id="about" className="py-20">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
         <TeamArt />
         <div>
@@ -200,11 +269,14 @@ export function Talent({ onJoin }: { onJoin: () => void }) {
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-start justify-between gap-6 rounded-3xl bg-neutral p-8 text-neutral-content md:flex-row md:items-center md:p-10">
           <div>
-            <h2 className="text-2xl font-bold md:text-3xl">Great at what you do? Join our bench.</h2>
-            <p className="mt-2 text-neutral-content/85">We're building a network of talent and partners.</p>
+            <h2 className="text-2xl font-bold md:text-3xl">Do great work? Work with us.</h2>
+            <p className="mt-2 max-w-2xl text-neutral-content/85">
+              We're looking for engineers, marketers, operations and finance people to work in client pods, and for
+              partners who work with startups and MSMEs. Tell us what you do and we'll get in touch.
+            </p>
           </div>
           <a href="#contact" onClick={onJoin} className="btn btn-accent">
-            Join as talent or partner
+            Tell us about you
           </a>
         </div>
       </div>

@@ -149,6 +149,10 @@ Open `design/concepts/index.html` (it uses the daisyUI CDN, so it needs internet
 | Later | Pod builder, comparison table, Hindi/Marathi, case studies | Decisions and real clients |
 | Always | 10 to 15 conversations with real founders and MSME owners to replace these hypotheses | Founder |
 
+## 8b. Status of the "this week" fixes (2026-10-22)
+
+Done: short form with a visible email link; plain-language "What is a pod?"; "bench" reworded; FAQ (eight questions, some answers deliberately non-committal until terms are decided); canonical URL, Open Graph and Twitter tags, JSON-LD, robots.txt and sitemap.xml; self-hosted fonts (no Google Fonts request); dead privacy links removed and replaced by a one-line data-use note. Still open: a real privacy page (needs counsel), an og:image, pre-rendering, and everything marked "Needs the founder".
+
 ## 9. Limits of this review
 
 - Simulated visitors are synthetic, written from a persona brief that states their fears in advance, so results partly mirror those inputs. No Ponte replies were modelled.

@@ -32,8 +32,10 @@ def build_text(sub: dict) -> str:
     if sub.get("phone"):
         lines.append(f"Phone: {sub['phone']}")
     if sub["role"] == "founder":
-        lines.append(f"Company: {sub.get('company')} ({sub.get('stage')})")
-        lines.append("Needs: " + ", ".join(NEED_LABELS.get(n, n) for n in sub.get("needs") or []))
+        if sub.get("company") or sub.get("stage"):
+            lines.append("Company: " + " ".join(filter(None, [sub.get("company"), f"({sub['stage']})" if sub.get("stage") else None])))
+        if sub.get("needs"):
+            lines.append("Needs: " + ", ".join(NEED_LABELS.get(n, n) for n in sub["needs"]))
     else:
         lines.append(f"Expertise: {sub.get('expertise')}")
         if sub.get("link"):

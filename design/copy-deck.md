@@ -20,6 +20,12 @@
 - **European work culture, Indian results:** Respect for working hours and leave. Clear, direct and documented communication. Autonomy and trust. Quality over speed.
 - **Costs you can see:** You cover the expenses of your own pod, plus a management fee to Ponte. We walk you through the numbers on the first call.
 
+## What is a pod? (Value section callout)
+A pod is a small team of 4 to 6 people who work only for your business. Think of it as your own team, without having to hire each person yourself. Ponte puts the team together and manages it day to day, and you tell it what matters most.
+
+## FAQ
+Eight questions live in `frontend/src/components/Sections.tsx` (`FAQ`). Answers about minimum term and exit, ownership of the work, replacing a pod member and how people are chosen are deliberately non-committal ("we go through it on the first call") until the founder decides real terms.
+
 ## How it works
 1. Talk 2. Design your pod 3. Pod starts 4. Review and grow
 
@@ -27,7 +33,8 @@
 Many startups and MSMEs need a full team long before they can afford to build one. We built Ponte to close that gap: a dedicated pod, managed by us, that works only for you. Ponte means "bridge".
 
 ## Talent strip
-**Heading:** Great at what you do? Join our bench. **CTA:** Join as talent or partner
+**Heading:** Do great work? Work with us. **Body:** We're looking for engineers, marketers, operations and finance people to work in client pods, and for partners who work with startups and MSMEs. Tell us what you do and we'll get in touch. **CTA:** Tell us about you
+("Bench" was dropped: simulated visitors read it as unpaid waiting or a shared pool.)
 
 ## Contact
 **Heading:** Let's talk about what you need, and what it costs.

@@ -6,7 +6,7 @@ from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator, mo
 NEEDS = {"eng", "sales", "ops", "fin", "unsure"}
 STAGES = {"Just starting", "Growing (under 20 people)", "Established (20+)"}
 # Bump when the consent wording on the website changes, so we know what each person agreed to.
-CONSENT_TEXT_VERSION = "2026-10-22-v1"
+CONSENT_TEXT_VERSION = "2026-10-22-v2"  # v2: privacy-policy link removed, plain data-use note added
 
 _PHONE = re.compile(r"^[0-9+()\-\s]{6,30}$")
 
@@ -61,13 +61,14 @@ class ContactIn(BaseModel):
     @model_validator(mode="after")
     def role_requirements(self):
         if self.role == "founder":
-            if not self.company:
-                raise ValueError("Company name is required for founders.")
-            if self.stage not in STAGES:
+            # Company, stage and roles are optional extras; a founder only has to say what they need.
+            if self.stage is not None and self.stage not in STAGES:
                 raise ValueError("Please choose a valid stage and size.")
-            if not self.needs or not set(self.needs) <= NEEDS:
-                raise ValueError("Pick at least one valid role.")
-            self.needs = sorted(set(self.needs))
+            if self.needs is not None and not set(self.needs) <= NEEDS:
+                raise ValueError("Pick valid roles only.")
+            self.needs = sorted(set(self.needs)) if self.needs else None
+            if not self.needs and not self.notes:
+                raise ValueError("Tell us what you need help with, or pick at least one role.")
             self.expertise = None
             self.link = None
         else:

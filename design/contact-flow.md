@@ -9,7 +9,7 @@ One form, two paths chosen by a first question.
 - Work email (required) and phone/WhatsApp (optional)
 - Company name (required)
 - Stage and size: just starting / growing (under 20 people) / established (20+) (required)
-- What do you need help with? checkboxes from the service list + "Not sure yet" (required, at least one)
+- Which roles would your pod need? checkboxes: Software and DevOps engineers / Sales and marketing / Operations and project management / Finance, HR and admin / Not sure yet (required, at least one)
 - Anything else we should know? (optional, 500 chars)
 
 ## Talent/partner path fields
@@ -19,7 +19,7 @@ One form, two paths chosen by a first question.
 Checkbox, required: "I agree to Ponte contacting me about my enquiry." Link to privacy policy.
 
 ## States
-- **Success:** "Thanks, [name]. We'll reply within 2 working days." (confirm the real SLA before launch)
+- **Success:** "Thanks, [name]. We'll reply within 2 working days." (confirmed by the founder)
 - **Field error:** inline, specific. "Please enter a valid email, like name@company.com."
 - **Server error:** "Something went wrong on our side. Your details are still here. Try again, or email us at [email]."
 - Spam protection: honeypot field plus rate limit (implemented in backend phase).

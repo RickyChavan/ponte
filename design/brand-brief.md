@@ -3,6 +3,13 @@
 ## What Ponte is
 Management-as-a-service for MSMEs and startups. Ponte provides the right team to run and grow parts of a business (operations, finance, HR, sales, etc.) so founders do not have to hire and manage everything themselves.
 
+## Business model (confirmed by the founder, 2026-10-22)
+- A **dedicated pod of 4 to 6 people per client**: software/DevOps engineers, sales and marketing, operations/project management, finance/HR/admin.
+- Pods run **in isolation**; no data shared between clients; NDA per client; contracts reviewed by Ponte's lawyer.
+- **European work culture, Indian results.** Principles: respect for hours and leave, direct and documented communication, autonomy and trust, quality over speed.
+- The client pays the pod's expenses plus a Ponte management fee (discussed on the call, not published).
+- **Chosen tagline:** "Build the bridge to your next stage."
+
 ## Positioning
 **Ponte is the bridge between your ambition and the right team.** (*Ponte* means "bridge" in Italian and Portuguese.)
 

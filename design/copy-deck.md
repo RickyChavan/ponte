@@ -1,40 +1,38 @@
-# Ponte: Copy Deck (draft, placeholders marked [ ])
+# Ponte: Copy Deck (v0.2, matches `frontend/index.html`)
 
 ## Hero
-**Headline:** The right team for your next stage of growth.
-**Sub:** Ponte gives MSMEs and startups the people and management they need, without the cost and wait of hiring everyone yourself.
+**Headline:** Build the bridge to your next stage.
+**Sub:** Ponte builds and manages a dedicated pod of 4 to 6 skilled people for your startup or MSME: engineers, marketers, operations and finance. European work culture, Indian results.
 **CTA:** Talk to us · **Secondary link:** See how it works
 
 ## Problem and value
 **Heading:** You can't run, sell and manage everything alone.
-**Body:** Growth asks for more hats than one founder can wear. Ponte steps in with experienced people who run the parts of your business you need covered, and hand them back to you when you are ready.
+**Body:** Growth asks for more hats than one founder can wear. Instead of hiring one person at a time, you get a ready pod of 4 to 6 people who work only for your business, managed by Ponte.
 
-## What we manage ([confirm final list])
-Operations · Finance and compliance · Sales and marketing · People and HR · Technology and tools
-Each card: one-line benefit + "Talk to us".
+## Your pod (roles)
+- Software and DevOps engineers: Build, ship and keep your product running.
+- Sales and marketing: Find customers and build a steady pipeline.
+- Operations and project management: Keep delivery, vendors and deadlines on track.
+- Finance, HR and admin: Handle accounts, hiring and the paperwork behind growth.
+
+## Why Ponte
+- **One pod, one client:** Every pod works in isolation. Your data and plans are never shared with other clients, and each client signs an NDA. Our lawyer reviews the contracts.
+- **European work culture, Indian results:** Respect for working hours and leave. Clear, direct and documented communication. Autonomy and trust. Quality over speed.
+- **Costs you can see:** You cover the expenses of your own pod, plus a management fee to Ponte. We walk you through the numbers on the first call.
 
 ## How it works
-1. **Talk:** Tell us where you are and where you want to be.
-2. **Match:** We put together the right team for your goals.
-3. **Start:** We plug in, set clear targets and work alongside you.
-4. **Grow:** Regular reviews; scale up, down or hand over as you need.
-
-## Case studies (PLACEHOLDER, replace with real stories)
-Card: [Industry] · [Challenge] · [What Ponte did] · [Result, only real figures]
+1. Talk 2. Design your pod 3. Pod starts 4. Review and grow
 
 ## About
-**Heading:** Why we built Ponte.
-**Body:** [Founder story: 2–3 sentences, to be written with the team]
+Many startups and MSMEs need a full team long before they can afford to build one. We built Ponte to close that gap: a dedicated pod, managed by us, that works only for you. Ponte means "bridge".
 
 ## Talent strip
-**Heading:** Great at what you do? Join our bench.
-**CTA:** Join as talent or partner
+**Heading:** Great at what you do? Join our bench. **CTA:** Join as talent or partner
 
 ## Contact
 **Heading:** Let's talk about what you need, and what it costs.
 **Sub:** Pricing depends on your goals and team, so we'll talk it through together. No obligation.
-**Submit button:** Send my details
+**Reply promise:** within 2 working days · **Email:** hello@ponte.co.in (confirm mailbox exists)
 
-## Microcopy
-- Empty "What do you need?" error: "Pick at least one, or choose 'Not sure yet'."
-- Footer: "© [year] Ponte. All rights reserved."
+## Claims policy
+No invented clients, numbers or testimonials. Do not claim legal compliance guarantees; only "NDA per client, contracts reviewed by our lawyer" until the lawyer's role is formalised. Case studies return once real clients exist.

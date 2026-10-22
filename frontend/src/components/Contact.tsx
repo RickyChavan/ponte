@@ -1,5 +1,5 @@
 import { useRef, useState, type FormEvent } from 'react'
-import { submitContact, type ContactRole } from '../lib/api'
+import { ApiError, submitContact, type ContactRole } from '../lib/api'
 
 const NEEDS = [
   ['eng', 'Software and DevOps engineers'],
@@ -39,6 +39,7 @@ export default function Contact({ role, setRole }: Props) {
   const [errors, setErrors] = useState<Errors>({})
   const [doneName, setDoneName] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
+  const [serverError, setServerError] = useState<string | null>(null)
 
   const a11y = (id: keyof Errors) =>
     errors[id] ? { 'aria-invalid': true as const, 'aria-describedby': `${id}-err` } : {}
@@ -69,21 +70,35 @@ export default function Contact({ role, setRole }: Props) {
     }
 
     setSending(true)
-    await submitContact({
-      role,
-      name: v('name'),
-      email: v('email'),
-      phone: v('phone') || undefined,
-      company: v('company') || undefined,
-      stage: v('stage') || undefined,
-      needs: role === 'founder' ? needs : undefined,
-      expertise: v('expertise') || undefined,
-      link: v('link') || undefined,
-      notes: v('notes') || undefined,
-      consent: true,
-    })
-    setSending(false)
-    setDoneName(v('name').split(' ')[0])
+    setServerError(null)
+    try {
+      await submitContact({
+        role,
+        name: v('name'),
+        email: v('email'),
+        phone: v('phone') || undefined,
+        company: v('company') || undefined,
+        stage: v('stage') || undefined,
+        needs: role === 'founder' ? needs : undefined,
+        expertise: v('expertise') || undefined,
+        link: v('link') || undefined,
+        notes: v('notes') || undefined,
+        consent: true,
+        website: v('website') || undefined,
+      })
+      setDoneName(v('name').split(' ')[0])
+    } catch (err) {
+      const status = err instanceof ApiError ? err.status : 0
+      setServerError(
+        status === 429
+          ? 'Too many attempts from your network. Please try again in a few minutes.'
+          : status === 422
+            ? 'Some details look invalid. Please check the form and try again.'
+            : 'Something went wrong on our side. Your details are still here. Try again, or email us at hello@ponte.co.in.',
+      )
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -112,10 +127,7 @@ export default function Contact({ role, setRole }: Props) {
             <div role="status" tabIndex={-1} className="card bg-base-100 shadow-xl">
               <div className="card-body items-center text-center">
                 <h3 className="card-title text-2xl">Thanks{doneName ? `, ${doneName}` : ''}.</h3>
-                <p>
-                  We'll reply within 2 working days. Nothing has been sent yet: this is a prototype and the backend is
-                  not connected.
-                </p>
+                <p>We'll reply within 2 working days.</p>
               </div>
             </div>
           ) : (
@@ -223,6 +235,12 @@ export default function Contact({ role, setRole }: Props) {
                     </p>
                   )}
                 </fieldset>
+
+                {serverError && (
+                  <div role="alert" className="alert alert-error alert-soft mt-2">
+                    <span>{serverError}</span>
+                  </div>
+                )}
 
                 <button type="submit" className="btn btn-primary btn-block mt-2" disabled={sending}>
                   {sending && <span className="loading loading-spinner" aria-hidden="true" />}

@@ -12,11 +12,30 @@ export interface ContactPayload {
   link?: string
   notes?: string
   consent: boolean
+  /** Honeypot: hidden from people, bots tend to fill it. */
+  website?: string
 }
 
-// TODO: the Python backend (/api/contact) does not exist yet. Until it does,
-// this resolves immediately so the form can show its success state.
+export class ApiError extends Error {
+  status: number
+
+  constructor(status: number, message: string) {
+    super(message)
+    this.status = status
+  }
+}
+
+/** Posts the contact form to the Python backend (proxied to :8000 in dev). */
 export async function submitContact(data: ContactPayload): Promise<void> {
-  void data
-  await new Promise((resolve) => setTimeout(resolve, 300))
+  let res: Response
+  try {
+    res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+  } catch {
+    throw new ApiError(0, 'network')
+  }
+  if (!res.ok) throw new ApiError(res.status, 'request failed')
 }

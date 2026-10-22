@@ -19,9 +19,9 @@ Management-as-a-service for MSMEs and startups that need the right team to grow.
 ## Status
 Design phase in progress (brand brief, tokens, sitemap, copy deck, contact flow, home wireframe in `design/`).
 
-Hi-fi prototype: `frontend/index.html` (open via a local server, e.g. `cd frontend && python3 -m http.server`).
+Frontend: `frontend/` (React + Vite + Tailwind + daisyUI), see `frontend/README.md`. The earlier plain HTML/CSS/JS prototype lives in `design/prototype-static/`. Lovable was tried but paused for lack of credits; the brief is in `design/lovable-prompt.md` if we want to revisit it.
 
 ## Tech stack (decided)
-- Frontend: HTML, CSS, JavaScript (no framework)
+- Frontend: React, TypeScript, Vite, Tailwind CSS 4, daisyUI 5 (switched from plain HTML/CSS/JS on 2026-10-22)
 - Backend: Python (framework to be chosen, e.g. Flask or FastAPI)
 - Domain: ponte.co.in (bought); hosting provider to be chosen

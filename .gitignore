@@ -8,3 +8,5 @@ build/
 .next/
 __pycache__/
 *.log
+
+.crowdcast/

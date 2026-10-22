@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-theme="ponte">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ponte Concept C | Quick contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="ponte-theme.css">
+</head>
+<body class="bg-base-100 pb-24 text-base-content sm:pb-0">
+<div class="concept-ribbon">Concept C: <strong>Quick contact</strong>. Fewest steps between a visitor and a human, in English or Hindi. <a href="index.html">All concepts</a></div>
+
+<header class="sticky top-0 z-40 border-b border-base-300/60 bg-base-100/90 backdrop-blur">
+  <div class="navbar mx-auto max-w-6xl px-4">
+    <div class="navbar-start"><a href="#" class="font-display text-3xl font-bold">ponte</a></div>
+    <div class="navbar-end gap-2">
+      <div class="join" role="group" aria-label="Language">
+        <button class="btn btn-sm join-item btn-neutral" id="lang-en" type="button">EN</button>
+        <button class="btn btn-sm join-item" id="lang-hi" type="button" lang="hi">हिन्दी</button>
+      </div>
+      <a href="#quick" class="btn btn-primary hidden sm:inline-flex" data-i18n="cta">Talk to us</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="quick" class="bg-base-100 py-10 md:py-16">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 lg:grid-cols-2">
+      <div>
+        <p class="mb-2 text-sm font-semibold tracking-widest text-primary uppercase" data-i18n="eyebrow">Management as a service</p>
+        <h1 class="text-4xl leading-tight font-bold md:text-5xl" data-i18n="h1">Build the bridge to your next stage.</h1>
+        <p class="py-5 text-lg text-base-content/80" data-i18n="sub">We build and manage a dedicated team of 4 to 6 people for your business. Tell us what you need and a real person will call you back.</p>
+        <ul class="space-y-2 text-base-content/80">
+          <li class="flex gap-3"><span class="mt-2.5 size-2.5 flex-none rounded-full bg-primary"></span><span data-i18n="b1">Your team works only for you</span></li>
+          <li class="flex gap-3"><span class="mt-2.5 size-2.5 flex-none rounded-full bg-primary"></span><span data-i18n="b2">You see the costs before you commit</span></li>
+          <li class="flex gap-3"><span class="mt-2.5 size-2.5 flex-none rounded-full bg-primary"></span><span data-i18n="b3">We reply within 2 working days</span></li>
+        </ul>
+        <p class="mt-4 text-xs text-base-content/60" lang="en">Hindi text is a draft for the concept and must be reviewed by a native speaker before use.</p>
+      </div>
+
+      <div class="card bg-base-100 shadow-xl border border-base-300">
+        <div class="card-body gap-3">
+          <h2 class="card-title text-2xl" data-i18n="formTitle">Get a call back</h2>
+
+          <div class="grid gap-2 sm:grid-cols-2">
+            <a class="btn btn-success btn-lg" href="https://wa.me/91XXXXXXXXXX" aria-describedby="wa-note"><span data-i18n="wa">Chat on WhatsApp</span></a>
+            <a class="btn btn-lg" href="#book" data-i18n="book">Book a 20-minute call</a>
+          </div>
+          <p id="wa-note" class="text-xs text-base-content/60">WhatsApp number is a placeholder: replace once Ponte has a business number.</p>
+
+          <div class="divider my-1" data-i18n="or">or leave your details</div>
+
+          <form id="f" novalidate class="grid gap-1">
+            <fieldset class="fieldset"><label class="fieldset-legend text-base" for="nm" data-i18n="name">Your name</label><input id="nm" class="input w-full" autocomplete="name"></fieldset>
+            <fieldset class="fieldset"><label class="fieldset-legend text-base" for="ph" data-i18n="phone">Phone or WhatsApp number</label><input id="ph" type="tel" class="input w-full" autocomplete="tel"></fieldset>
+            <fieldset class="fieldset"><label class="fieldset-legend text-base" for="need" data-i18n="need">What do you need help with?</label>
+              <select id="need" class="select w-full"><option>Software and DevOps engineers</option><option>Sales and marketing</option><option>Operations and project management</option><option>Finance, HR and admin</option><option>Not sure yet</option></select></fieldset>
+            <label class="flex min-h-11 items-start gap-3 text-sm"><input type="checkbox" class="checkbox mt-0.5"><span data-i18n="consent">I agree to Ponte contacting me about this enquiry.</span></label>
+            <button class="btn btn-primary btn-block mt-1" type="submit" data-i18n="send">Call me back</button>
+            <p id="ok" class="hidden text-sm text-success" role="status">Concept only: nothing was sent.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-base-200 py-14">
+    <div class="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-4">
+      <article class="card bg-base-100"><div class="card-body"><h3 class="card-title text-lg">Engineers and DevOps</h3><p class="text-sm text-base-content/80">Build, ship, keep it running.</p></div></article>
+      <article class="card bg-base-100"><div class="card-body"><h3 class="card-title text-lg">Sales and marketing</h3><p class="text-sm text-base-content/80">Customers and pipeline.</p></div></article>
+      <article class="card bg-base-100"><div class="card-body"><h3 class="card-title text-lg">Operations</h3><p class="text-sm text-base-content/80">Delivery on track.</p></div></article>
+      <article class="card bg-base-100"><div class="card-body"><h3 class="card-title text-lg">Finance, HR, admin</h3><p class="text-sm text-base-content/80">Accounts, hiring, paperwork.</p></div></article>
+    </div>
+  </section>
+
+  <section class="py-14">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="mb-6 text-3xl font-bold" data-i18n="afterTitle">What happens after you contact us</h2>
+      <ol class="steps steps-vertical w-full md:steps-horizontal">
+        <li class="step step-neutral" data-content="1"><span class="px-2 text-left md:text-center"><b>We reply</b><br><small>Within 2 working days.</small></span></li>
+        <li class="step step-neutral" data-content="2"><span class="px-2 text-left md:text-center"><b>A short call</b><br><small>Your goals and the roles you need.</small></span></li>
+        <li class="step step-neutral" data-content="3"><span class="px-2 text-left md:text-center"><b>A written proposal</b><br><small>Pod, costs and terms, no obligation.</small></span></li>
+        <li class="step step-primary" data-content="4"><span class="px-2 text-left md:text-center"><b>You decide</b><br><small>Start when you are ready.</small></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="book" class="bg-neutral py-12 text-neutral-content">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4">
+      <div><h2 class="text-2xl font-bold">Prefer to pick a time?</h2><p class="text-neutral-content/85">A booking calendar embed goes here (Cal.com, Google Calendar appointment slots or similar).</p></div>
+      <a class="btn btn-accent" href="#">Open calendar [placeholder]</a>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-base-200 px-4 py-8 text-sm"><div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-2"><span class="font-display text-2xl font-bold">ponte</span><span>&copy; 2026 Ponte &middot; hello@ponte.co.in</span></div></footer>
+
+<div class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-base-300 bg-base-100 p-3 sm:hidden">
+  <a class="btn btn-success" href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+  <a class="btn btn-primary" href="#quick" data-i18n="cta">Talk to us</a>
+</div>
+
+<script>
+const T = {
+  en: {},
+  hi: {
+    eyebrow: 'प्रबंधन सेवा', h1: 'अपने अगले पड़ाव तक पुल बनाइए।',
+    sub: 'हम आपके व्यवसाय के लिए 4 से 6 लोगों की समर्पित टीम बनाते और चलाते हैं। अपनी ज़रूरत बताइए, हमारी टीम का एक व्यक्ति आपको फ़ोन करेगा।',
+    b1: 'आपकी टीम सिर्फ़ आपके लिए काम करती है', b2: 'प्रतिबद्धता से पहले आप खर्च देख सकते हैं', b3: 'हम 2 कार्य-दिवस में जवाब देते हैं',
+    formTitle: 'हमसे फ़ोन पर बात करें', wa: 'WhatsApp पर बात करें', book: '20 मिनट की कॉल बुक करें', or: 'या अपनी जानकारी छोड़ें',
+    name: 'आपका नाम', phone: 'फ़ोन या WhatsApp नंबर', need: 'आपको किस काम में मदद चाहिए?',
+    consent: 'मैं सहमत हूँ कि Ponte इस पूछताछ के बारे में मुझसे संपर्क कर सकता है।', send: 'मुझे वापस कॉल करें', cta: 'हमसे बात करें',
+    afterTitle: 'संपर्क करने के बाद क्या होता है'
+  }
+};
+const orig = {};
+document.querySelectorAll('[data-i18n]').forEach(el => { orig[el.dataset.i18n + '|' + [...document.querySelectorAll('[data-i18n]')].indexOf(el)] = el.textContent; });
+function setLang(l) {
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach((el, i) => {
+    const k = el.dataset.i18n;
+    el.textContent = l === 'hi' && T.hi[k] ? T.hi[k] : orig[k + '|' + i];
+  });
+  document.getElementById('lang-en').classList.toggle('btn-neutral', l === 'en');
+  document.getElementById('lang-hi').classList.toggle('btn-neutral', l === 'hi');
+  document.getElementById('lang-en').setAttribute('aria-pressed', l === 'en');
+  document.getElementById('lang-hi').setAttribute('aria-pressed', l === 'hi');
+}
+document.getElementById('lang-en').onclick = () => setLang('en');
+document.getElementById('lang-hi').onclick = () => setLang('hi');
+document.getElementById('f').addEventListener('submit', e => { e.preventDefault(); document.getElementById('ok').classList.remove('hidden'); });
+setLang('en');
+</script>
+</body>
+</html>

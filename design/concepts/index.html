@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="ponte">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ponte UI concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="ponte-theme.css">
+</head>
+<body class="bg-base-100 text-base-content">
+<main class="mx-auto max-w-6xl px-4 py-14">
+  <p class="mb-2 text-sm font-semibold tracking-widest text-primary uppercase">Ponte &middot; design exploration</p>
+  <h1 class="text-4xl font-bold md:text-5xl">Three new directions for the homepage</h1>
+  <p class="mt-4 max-w-3xl text-lg text-base-content/80">Each concept is a working page using the same brand and daisyUI theme as the built site. They are sketches to react to, not finished designs. Pending facts are marked <span class="badge badge-warning badge-sm">placeholder</span>; nothing here invents clients, numbers or people.</p>
+
+  <div class="mt-10 grid gap-6 lg:grid-cols-3">
+    <article class="card card-border bg-base-100">
+      <div class="card-body">
+        <span class="badge badge-primary">A</span>
+        <h2 class="card-title text-2xl">Pod builder</h2>
+        <p class="text-base-content/80">Visitors compose their own 4 to 6 person pod from role counters, see it summarised, then talk to us about <em>that</em> pod.</p>
+        <p class="text-sm"><b>Best for:</b> founders who want to feel in control; makes the abstract "pod" concrete.</p>
+        <p class="text-sm"><b>Watch out:</b> may imply pricing or availability we have not decided; skip if the team is not ready to talk about specific roles.</p>
+        <div class="card-actions"><a class="btn btn-primary" href="a-pod-builder.html">Open concept A</a></div>
+      </div>
+    </article>
+    <article class="card card-border bg-base-100">
+      <div class="card-body">
+        <span class="badge badge-primary">B</span>
+        <h2 class="card-title text-2xl">Trust first</h2>
+        <p class="text-base-content/80">An editorial page for a company with no case studies: privacy diagram, terms in writing, people, FAQ that answers the hard questions.</p>
+        <p class="text-sm"><b>Best for:</b> sceptical buyers (CTOs, finance heads, incubators) who need legitimacy.</p>
+        <p class="text-sm"><b>Watch out:</b> needs real decisions and real people from the founder before it can go live; many placeholders today.</p>
+        <div class="card-actions"><a class="btn btn-primary" href="b-trust-first.html">Open concept B</a></div>
+      </div>
+    </article>
+    <article class="card card-border bg-base-100">
+      <div class="card-body">
+        <span class="badge badge-primary">C</span>
+        <h2 class="card-title text-2xl">Quick contact</h2>
+        <p class="text-base-content/80">Shortest path to a human: WhatsApp, a booking call or a three-field callback form, with an English/Hindi switch.</p>
+        <p class="text-sm"><b>Best for:</b> MSME owners on phones who prefer talking to typing.</p>
+        <p class="text-sm"><b>Watch out:</b> needs a real WhatsApp/phone number and someone to answer; Hindi copy needs a native reviewer.</p>
+        <div class="card-actions"><a class="btn btn-primary" href="c-quick-contact.html">Open concept C</a></div>
+      </div>
+    </article>
+  </div>
+
+  <h2 class="mt-14 text-2xl font-bold">How they compare</h2>
+  <div class="mt-4 overflow-x-auto rounded-box border border-base-300">
+    <table class="table">
+      <thead><tr><th>&nbsp;</th><th>A Pod builder</th><th>B Trust first</th><th>C Quick contact</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Main goal</th><td>Engagement</td><td>Credibility</td><td>Conversion speed</td></tr>
+        <tr><th scope="row">Audience fit</th><td>Founders, CTOs</td><td>CTOs, finance heads, incubators</td><td>MSME owners, mobile users</td></tr>
+        <tr><th scope="row">Needs from Ponte</th><td>Role and pricing decisions</td><td>Terms, names, privacy page</td><td>Phone/WhatsApp number, someone to answer</td></tr>
+        <tr><th scope="row">Build effort</th><td>Medium (interactive)</td><td>Low (content-heavy)</td><td>Low to medium</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-6 text-base-content/80">These are not exclusive: a strong homepage could use C's contact options, B's trust blocks and A's pod builder as the hero.</p>
+</main>
+</body>
+</html>

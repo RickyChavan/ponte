@@ -1,0 +1,47 @@
+/* Shared theme for the Ponte UI concept pages (daisyUI 5 via CDN). Same colours as frontend/src/index.css. */
+[data-theme="ponte"] {
+  color-scheme: light;
+  --color-base-100: #FBF6EE;
+  --color-base-200: #F1E7D6;
+  --color-base-300: #E4D5BC;
+  --color-base-content: #12383C;
+  --color-primary: #B4441F;
+  --color-primary-content: #FFFFFF;
+  --color-secondary: #3F5F62;
+  --color-secondary-content: #FBF6EE;
+  --color-accent: #E8A33D;
+  --color-accent-content: #12383C;
+  --color-neutral: #12383C;
+  --color-neutral-content: #FBF6EE;
+  --color-info: #2F6F8F;
+  --color-info-content: #FFFFFF;
+  --color-success: #2E7D4F;
+  --color-success-content: #FFFFFF;
+  --color-warning: #E8A33D;
+  --color-warning-content: #12383C;
+  --color-error: #B3261E;
+  --color-error-content: #FFFFFF;
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.28125rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { font-family: "Inter", system-ui, sans-serif; }
+h1, h2, h3, .font-display { font-family: "Fraunces", Georgia, serif; letter-spacing: -0.01em; }
+:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+.concept-ribbon {
+  background: var(--color-neutral);
+  color: var(--color-neutral-content);
+  font-size: .85rem;
+  padding: .5rem 1rem;
+  text-align: center;
+}
+.concept-ribbon a { text-decoration: underline; }

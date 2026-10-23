@@ -34,7 +34,7 @@ nano .env
 ```
 DATABASE_PATH=/home/<username>/ponte-data/ponte.db
 ADMIN_TOKEN=<a long random string; make one with: python3 -c "import secrets;print(secrets.token_urlsafe(32))">
-ALLOWED_ORIGINS=https://<your-infinityfree-domain>,http://<your-infinityfree-domain>
+ALLOWED_ORIGINS=https://ponte.infinityfree.io,http://ponte.infinityfree.io
 ```
 
    `ALLOWED_ORIGINS` must list the exact address people open your site at (the InfinityFree prototype domain), otherwise browsers will block the form. Leave `SLACK_WEBHOOK_URL` and `SMTP_*` empty for now (see notes below).

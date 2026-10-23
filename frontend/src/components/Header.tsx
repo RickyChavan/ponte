@@ -45,7 +45,7 @@ export default function Header() {
             <ul className="menu menu-horizontal gap-1 text-base">
               {NAV.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href}>{n.label}</a>
+                  <a href={n.href} className="min-h-11 items-center">{n.label}</a>
                 </li>
               ))}
             </ul>
@@ -72,7 +72,7 @@ export default function Header() {
             <ul className="menu mx-auto w-full max-w-6xl px-4 text-base">
               {NAV.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} onClick={() => setOpen(false)}>
+                  <a href={n.href} className="min-h-11 items-center" onClick={() => setOpen(false)}>
                     {n.label}
                   </a>
                 </li>

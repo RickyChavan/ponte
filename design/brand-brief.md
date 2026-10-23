@@ -29,7 +29,10 @@ Management-as-a-service for MSMEs and startups. Ponte provides the right team to
 2. The right team, right when you need it.
 3. Build the bridge to your next stage.
 
-## Visual direction
+## Visual direction (updated 2026-10-23: bold dark redesign)
+The live site now uses a dark theme: deep teal-black backgrounds (#0B2024, #102B30), cream text (#F5EEE2), coral-terracotta primary (#F0784A) and amber accent (#F2B04C), with cream panels for contrast. All text pairs pass WCAG AA (checked: cream on base 12.9 to 14.6:1, primary text 5.3 to 6.0:1). The theme lives in `frontend/src/index.css`; the older cream/terracotta tokens in `design-tokens.css` and `design/prototype-static/` are the previous direction.
+
+## Visual direction (original, light)
 Warm cream background, deep teal text, terracotta accent. Rounded shapes, generous whitespace, real photography of people working (when available). Bridge motif: a simple arch used sparingly in the logo and section dividers. See [design-tokens.md](design-tokens.md).
 
 ## Logo direction (not generated yet)

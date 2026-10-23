@@ -5,33 +5,33 @@
 @plugin "daisyui/theme" {
   name: "ponte";
   default: true;
-  prefersdark: false;
-  color-scheme: light;
+  prefersdark: true;
+  color-scheme: dark;
 
-  --color-base-100: #FBF6EE;
-  --color-base-200: #F1E7D6;
-  --color-base-300: #E4D5BC;
-  --color-base-content: #12383C;
-  --color-primary: #B4441F;
-  --color-primary-content: #FFFFFF;
-  --color-secondary: #3F5F62;
-  --color-secondary-content: #FBF6EE;
-  --color-accent: #E8A33D;
-  --color-accent-content: #12383C;
-  --color-neutral: #12383C;
-  --color-neutral-content: #FBF6EE;
-  --color-info: #2F6F8F;
-  --color-info-content: #FFFFFF;
-  --color-success: #2E7D4F;
-  --color-success-content: #FFFFFF;
-  --color-warning: #E8A33D;
-  --color-warning-content: #12383C;
-  --color-error: #B3261E;
-  --color-error-content: #FFFFFF;
+  --color-base-100: #0B2024;
+  --color-base-200: #102B30;
+  --color-base-300: #1C4048;
+  --color-base-content: #F5EEE2;
+  --color-primary: #F0784A;
+  --color-primary-content: #0B2024;
+  --color-secondary: #8FB8BE;
+  --color-secondary-content: #0B2024;
+  --color-accent: #F2B04C;
+  --color-accent-content: #0B2024;
+  --color-neutral: #F5EEE2;
+  --color-neutral-content: #0B2024;
+  --color-info: #7CC4E8;
+  --color-info-content: #0B2024;
+  --color-success: #6FCF97;
+  --color-success-content: #0B2024;
+  --color-warning: #F2B04C;
+  --color-warning-content: #0B2024;
+  --color-error: #FF8A80;
+  --color-error-content: #0B2024;
 
   --radius-selector: 1rem;
-  --radius-field: 0.5rem;
-  --radius-box: 1rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1.25rem;
 
   --size-selector: 0.25rem;
   --size-field: 0.28125rem;

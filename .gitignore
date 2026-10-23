@@ -11,3 +11,10 @@ __pycache__/
 
 .crowdcast/
 deploy/
+
+# Hallmark working files
+.hallmark/before/
+.hallmark/before.json
+.hallmark/before.txt
+.hallmark/shots/
+.hallmark/compare.html

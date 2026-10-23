@@ -29,7 +29,10 @@ Management-as-a-service for MSMEs and startups. Ponte provides the right team to
 2. The right team, right when you need it.
 3. Build the bridge to your next stage.
 
-## Visual direction (updated 2026-10-23: bold dark redesign)
+## Visual direction (updated 2026-10-23: Hallmark redesign, dark and photographic)
+The site was redesigned with the Hallmark skill: a full-bleed photograph hero, rows, a bento, numbered steps, founders' portrait slots, no illustrations. Tokens now live in `frontend/src/tokens.css` (OKLCH). The notes below describe the palette it keeps.
+
+## Visual direction (previous: bold dark)
 The live site now uses a dark theme: deep teal-black backgrounds (#0B2024, #102B30), cream text (#F5EEE2), coral-terracotta primary (#F0784A) and amber accent (#F2B04C), with cream panels for contrast. All text pairs pass WCAG AA (checked: cream on base 12.9 to 14.6:1, primary text 5.3 to 6.0:1). The theme lives in `frontend/src/index.css`; the older cream/terracotta tokens in `design-tokens.css` and `design/prototype-static/` are the previous direction.
 
 ## Visual direction (original, light)

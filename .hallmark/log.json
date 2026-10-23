@@ -1,0 +1,34 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "page",
+  "shape": "Poster hero, Statement with Rows, Bento, Steps, Split, Rows, Band, Form",
+  "theme": "brand",
+  "genre": "modern-minimal",
+  "hero": "Poster",
+  "nav": "edge-aligned bar",
+  "footer": "mast",
+  "imagery": "photographs, library 1 + owner slots 2",
+  "photos": [
+   "KeizersgrachtReguliersgrachtAmsterdam"
+  ],
+  "signature": "a full-bleed canal-bridge photograph under the headline",
+  "sections": [
+   "Poster",
+   "Statement",
+   "Rows",
+   "Bento",
+   "Steps",
+   "Split",
+   "Rows",
+   "Band",
+   "Form"
+  ],
+  "waived": [
+   "81"
+  ],
+  "prompt": "redesign the website to look more professional with founders images and story",
+  "date": "2026-10-23"
+ }
+]

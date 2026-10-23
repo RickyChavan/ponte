@@ -25,11 +25,22 @@ export class ApiError extends Error {
   }
 }
 
-/** Posts the contact form to the Python backend (proxied to :8000 in dev). */
+declare global {
+  interface Window {
+    PONTE_CONFIG?: { API_BASE?: string }
+  }
+}
+
+/** Backend address from public/config.js; empty means same origin (dev uses the Vite proxy). */
+function apiBase(): string {
+  return (window.PONTE_CONFIG?.API_BASE ?? '').replace(/\/+$/, '')
+}
+
+/** Posts the contact form to the Python backend. */
 export async function submitContact(data: ContactPayload): Promise<void> {
   let res: Response
   try {
-    res = await fetch('/api/contact', {
+    res = await fetch(`${apiBase()}/api/contact`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),

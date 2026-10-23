@@ -21,7 +21,9 @@ Design phase in progress (brand brief, tokens, sitemap, copy deck, contact flow,
 
 Frontend: `frontend/` (React + Vite + Tailwind + daisyUI), see `frontend/README.md`. The earlier plain HTML/CSS/JS prototype lives in `design/prototype-static/`. Lovable was tried but paused for lack of credits; the brief is in `design/lovable-prompt.md` if we want to revisit it.
 
+Hosting the prototype (InfinityFree site + PythonAnywhere API): see `docs/hosting-prototype.md`; build the upload packages with `scripts/package-hosting.sh`.
+
 ## Tech stack (decided)
 - Frontend: React, TypeScript, Vite, Tailwind CSS 4, daisyUI 5 (switched from plain HTML/CSS/JS on 2026-10-22)
-- Backend: Python (framework to be chosen, e.g. Flask or FastAPI)
-- Domain: ponte.co.in (bought); hosting provider to be chosen
+- Backend: Python, FastAPI + SQLite (WSGI wrapper for shared hosts)
+- Domain: ponte.co.in (bought); prototype hosting: InfinityFree (site) + PythonAnywhere (API), see docs/hosting-prototype.md

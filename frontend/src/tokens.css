@@ -5,14 +5,25 @@
   --text-section: clamp(2rem, 2.5vw + 1rem, 3.5rem); --text-title: clamp(1.25rem, 0.75vw + 0.875rem, 1.625rem); --text-lead: clamp(1.125rem, 0.35vw + 1rem, 1.375rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
-  --color-error: oklch(52% 0.19 27); --color-success: oklch(50% 0.12 150);
   --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
   --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
-  --color-paper: oklch(22.8% 0.028 212); --color-paper-2: oklch(27% 0.034 211); --color-paper-3: oklch(34.9% 0.043 214);
-  --color-ink: oklch(95.1% 0.018 81); --color-ink-2: oklch(85.3% 0.018 85); --color-muted: oklch(76.3% 0.03 205);
-  --color-rule: oklch(41.1% 0.044 213);
-  --color-accent: oklch(70.3% 0.16 41); --color-accent-ink: oklch(22.8% 0.028 212); --color-focus: oklch(78.2% 0.133 42);
   --font-display: "Fraunces Variable", Georgia, ui-serif, serif; --font-body: "Inter Variable", ui-sans-serif, system-ui, sans-serif; --font-outlier: var(--font-body);
   --radius-card: 12px; --radius-input: 8px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
   --tracking-display: -0.02em; --display-weight: 600;
+}
+
+/* Themes: light is the default; dark applies when the visitor chooses it or the system prefers it (set by the script in index.html). */
+:root, :root[data-theme="light"] {
+  color-scheme: light;
+  --color-paper: #F6F1E7; --color-paper-2: #EDE5D6; --color-paper-3: #E3D8C4;
+  --color-ink: #12383C; --color-ink-2: #3F5F62; --color-muted: #566F6E; --color-rule: #CFC3AE; --color-edge: #7A8F8D;
+  --color-accent: #B4441F; --color-accent-ink: #FFFFFF; --color-focus: #B4441F;
+  --color-error: #B3261E; --color-success: #2E7D4F;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #0B2024; --color-paper-2: #102B30; --color-paper-3: #1C4048;
+  --color-ink: #F5EEE2; --color-ink-2: #D4CEC2; --color-muted: #9DB8BB; --color-rule: #2C5159; --color-edge: #9DB8BB;
+  --color-accent: #F0784A; --color-accent-ink: #0B2024; --color-focus: #FF9A72;
+  --color-error: #FF8A80; --color-success: #6FCF97;
 }

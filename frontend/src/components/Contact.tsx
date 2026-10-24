@@ -100,7 +100,7 @@ export default function Contact({ role, setRole }: Props) {
   }
 
   return (
-    <section id="contact" className="section section--band">
+    <section id="contact" className="section section--tint">
       <div className="container split split--form">
         <div className="split__head">
           <h2>Tell us what you need.</h2>
@@ -109,8 +109,9 @@ export default function Contact({ role, setRole }: Props) {
             <li>We’ll reply within 2 working days.</li>
             <li>No obligation, no hard sell.</li>
           </ul>
-          <p>
-            Prefer to write? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          <p className="bigmail">
+            Prefer to write?
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
         </div>
 

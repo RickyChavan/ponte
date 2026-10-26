@@ -18,6 +18,17 @@ git push -f https://github.com/RickyChavan/ponte.git HEAD:gh-pages
 
 Backend: the form needs the PythonAnywhere API (see below). When it is up, set `API_BASE` in the live `config.js` (edit `config.js` on the `gh-pages` branch) and add `https://rickychavan.github.io` to the backend's `ALLOWED_ORIGINS`.
 
+## Live now: Render (API)
+
+The FastAPI backend runs on Render's free plan as `ponte-api` at https://ponte-api-yc19.onrender.com (service created from this repo, branch `ui-ux-pro`, root directory `backend`, start command `uvicorn app.main:app --host 0.0.0.0 --port $PORT`; see `render.yaml`). Settings live in the Render dashboard under Environment: `ALLOWED_ORIGINS`, `ADMIN_TOKEN` (generated; read it there), `DATABASE_PATH=/tmp/ponte.db`, `PYTHON_VERSION`.
+
+Free-plan limits to know:
+- The service sleeps after about 15 minutes idle; the first request afterwards takes about a minute.
+- The disk is not kept, so the SQLite file in `/tmp` is lost when the service restarts, redeploys or spins down. **Enquiries are not durable.** Set `SLACK_WEBHOOK_URL` in Render so every enquiry also reaches Slack, or move to a persistent store (paid disk or an external free Postgres, which needs a small code change).
+- Render's free plan blocks outbound SMTP, so email alerts will not work there.
+
+The live site's `config.js` (on the `gh-pages` branch) sets `API_BASE` to this address.
+
 ## 0. Build the upload packages
 
 ```bash

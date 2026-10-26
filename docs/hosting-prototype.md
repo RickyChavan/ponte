@@ -4,6 +4,20 @@
 
 You will do the account steps yourself; nothing here needs you to share a password with anyone.
 
+## Live now: GitHub Pages (static site)
+
+The portfolio-style build is published at https://rickychavan.github.io/ponte/ from the `gh-pages` branch (Settings > Pages > Deploy from a branch > `gh-pages` / root). The build uses relative asset paths (`base: './'` in `vite.config.ts`), so the same files also work at a domain root.
+
+To republish after a change:
+
+```bash
+cd frontend && npm run build
+# copy dist/ into a temp folder, add an empty .nojekyll file, git init, commit, then:
+git push -f https://github.com/RickyChavan/ponte.git HEAD:gh-pages
+```
+
+Backend: the form needs the PythonAnywhere API (see below). When it is up, set `API_BASE` in the live `config.js` (edit `config.js` on the `gh-pages` branch) and add `https://rickychavan.github.io` to the backend's `ALLOWED_ORIGINS`.
+
 ## 0. Build the upload packages
 
 ```bash

@@ -1,10 +1,20 @@
 <!doctype html>
-<html lang="en" data-theme="ponte">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0B2024" />
+    <meta name="theme-color" content="#F6F1E7" />
+    <script>
+      // Set the theme before first paint: the saved choice, else the system preference.
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('ponte-theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = t;
+        document.documentElement.classList.add('js');
+      })();
+    </script>
     <title>Ponte | Build the bridge to your next stage</title>
     <meta
       name="description"
@@ -42,7 +52,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script src="/config.js"></script>
+    <script src="config.js"></script>
     <script>
       // Hallmark slot helper: hallmarkSlots({ hero: '/photos/team.jpg' }) swaps a slot's picture without touching the layout.
       window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };

@@ -58,6 +58,15 @@ const icon = {
 }
 
 export const Icons = {
+  arrow: () => (
+    <svg {...icon} aria-hidden="true" className="icon icon--sm"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+  ),
+  sun: () => (
+    <svg {...icon} aria-hidden="true" className="icon"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19" /></svg>
+  ),
+  moon: () => (
+    <svg {...icon} aria-hidden="true" className="icon"><path d="M20 14.5A8 8 0 019.5 4 8 8 0 1020 14.5z" /></svg>
+  ),
   menu: () => (
     <svg {...icon} aria-hidden="true" className="icon"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
   ),

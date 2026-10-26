@@ -9,6 +9,31 @@ export const NAV = [
   { href: '#about', label: 'About' },
 ]
 
+function ThemeToggle() {
+  const [dark, setDark] = useState(() => document.documentElement.dataset.theme === 'dark')
+  const flip = () => {
+    const next = dark ? 'light' : 'dark'
+    document.documentElement.dataset.theme = next
+    try {
+      localStorage.setItem('ponte-theme', next)
+    } catch {
+      /* private mode: the choice just lasts for this visit */
+    }
+    setDark(!dark)
+  }
+  return (
+    <button
+      type="button"
+      className="nav__theme"
+      aria-pressed={dark}
+      aria-label={dark ? 'Switch to the light theme' : 'Switch to the dark theme'}
+      onClick={flip}
+    >
+      {dark ? <Icons.sun /> : <Icons.moon />}
+    </button>
+  )
+}
+
 export default function Header() {
   const [open, setOpen] = useState(false)
   const btn = useRef<HTMLButtonElement>(null)
@@ -43,6 +68,7 @@ export default function Header() {
               </a>
             ))}
           </nav>
+          <ThemeToggle />
           <a href="#contact" className="btn nav__cta">
             Talk to us
           </a>

@@ -8,7 +8,7 @@ npm run dev      # http://localhost:5173 (proxies /api to the Python backend on 
 npm run build    # type-check and production build into dist/
 ```
 
-- Design system: Hallmark tokens in `src/tokens.css` (colours, fonts, spacing), base rules in `src/base.css`, the page's own rules in `src/index.css`. Change colours and fonts in `tokens.css`.
+- Design (branch `ui-ux-pro`): a portfolio-style layout, large editorial headline, a hero photograph, the roles as a hover index, hairline rules and one accent, chosen with the UI/UX Pro Max skill (Portfolio Grid pattern, Minimalism and Swiss style). Light and dark themes live in `src/tokens.css` (the nav's sun/moon button switches and remembers the choice); layout rules are in `src/index.css`, base rules in `src/base.css`.
 - Sections: `src/components/Sections.tsx`, form: `src/components/Contact.tsx`, nav `Header.tsx`, footer `Footer.tsx`.
 - **Your photographs:** copy files into `public/photos/`, then set `src` (and `alt`) for `hero`, `founder-1` and `founder-2` in `src/photos.ts`. The hero currently shows a credited Wikimedia Commons stand-in; the founder frames stay plain until you add pictures. Replace the dashed "Founder name and role" captions in `Sections.tsx` (`About`) and the "Why we built Ponte." text with the founders' real names and story.
 - daisyUI and Tailwind are still installed but no longer imported; add `@import "tailwindcss"; @plugin "daisyui";` at the top of `src/index.css` to use them again.

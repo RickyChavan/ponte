@@ -1,29 +1,32 @@
-import { Slot } from './Art'
+import { Icons, Slot } from './Art'
 
 /* ----------------------------------------------------------------- Hero */
 
 export function Hero() {
   return (
     <section id="top" className="hero">
-      <Slot name="hero" className="hero__photo" priority />
-      <div className="hero__scrim" aria-hidden="true" />
-      <div className="container hero__body">
-        <h1>Build the bridge to your next stage.</h1>
-        <p className="lead">A dedicated team of 4 to 6 for your startup or MSME.</p>
-        <div className="actions">
-          <a href="#contact" className="btn">
-            Talk to us
-          </a>
-          <a href="#how" className="btn btn--quiet">
-            See how it works
-          </a>
+      <div className="container">
+        <h1 className="hero__title">Build the bridge to your next stage.</h1>
+        <div className="hero__meta">
+          <p className="lead">A dedicated team of 4 to 6 for your startup or MSME, built and managed by Ponte.</p>
+          <div className="actions">
+            <a href="#contact" className="btn">
+              Talk to us
+            </a>
+            <a href="#how" className="btn btn--quiet">
+              See how it works
+            </a>
+          </div>
         </div>
+      </div>
+      <div className="container">
+        <Slot name="hero" className="hero__photo" priority />
       </div>
     </section>
   )
 }
 
-/* ------------------------------------------------------------------ Pod */
+/* ------------------------------------------------------- Roles (the index) */
 
 const ROLES: [string, string][] = [
   ['Software and DevOps engineers', 'Build, ship and keep your product running.'],
@@ -35,64 +38,53 @@ const ROLES: [string, string][] = [
 export function Pod() {
   return (
     <section id="services" className="section">
-      <div className="container statement">
-        <h2 className="statement__head">You can’t run, sell and manage everything alone.</h2>
-        <p className="lead">
+      <div className="container">
+        <h2 className="statement">You can’t run, sell and manage everything alone.</h2>
+        <p className="statement__lead">
           Instead of hiring one person at a time, you get a pod: a small team of 4 to 6 people who work only for your
           business, managed by Ponte.
         </p>
       </div>
-      <div className="container split split--rows">
-        <div className="split__head">
+      <div className="container index">
+        <div className="index__head">
           <h2>A team built around your goals.</h2>
           <p>We mix roles to fit what your business needs right now.</p>
-          <a href="#contact" className="btn">
-            Talk to us
-          </a>
         </div>
-        <ul className="rows">
+        <ol className="index__list">
           {ROLES.map(([title, text]) => (
-            <li key={title} className="row">
-              <h3>{title}</h3>
-              <p>{text}</p>
+            <li key={title} data-reveal>
+              <a href="#contact" className="index__row">
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <span className="index__go">
+                  <Icons.arrow />
+                  <span className="visually-hidden">Talk to us about this role</span>
+                </span>
+              </a>
             </li>
           ))}
-        </ul>
+        </ol>
       </div>
     </section>
   )
 }
 
-/* ------------------------------------------------------------------ Why */
+/* ------------------------------------------------------ Principles (about) */
 
 export function Why() {
   return (
-    <section id="why" className="section section--band">
+    <section id="why" className="section section--tint">
       <div className="container">
         <h2 className="section__head">Your pod, your privacy, your pace.</h2>
-        <div className="bento">
-          <article className="tile tile--lead">
+        <div className="principles">
+          <article data-reveal>
             <h3>One pod, one client.</h3>
             <p>
               Every pod works in isolation. Your data and plans are never shared with other clients. Each client signs
               an NDA, and our lawyer reviews the contracts.
             </p>
-            <div className="isolation" role="img" aria-label="Diagram: your pod is kept apart from the pods of two other clients">
-              <div className="isolation__pod isolation__pod--yours">
-                <span>Your pod</span>
-                <i /> <i /> <i /> <i /> <i />
-              </div>
-              <div className="isolation__pod">
-                <span>Another client</span>
-                <i /> <i /> <i /> <i />
-              </div>
-              <div className="isolation__pod">
-                <span>Another client</span>
-                <i /> <i /> <i /> <i /> <i /> <i />
-              </div>
-            </div>
           </article>
-          <article className="tile">
+          <article data-reveal>
             <h3>European work culture, Indian results.</h3>
             <ul className="plain">
               <li>Respect for working hours and leave.</li>
@@ -101,21 +93,12 @@ export function Why() {
               <li>Quality over speed.</li>
             </ul>
           </article>
-          <article className="tile tile--wide">
+          <article data-reveal>
             <h3>Costs you can see.</h3>
-            <div className="formula" role="img" aria-label="Your cost is the expenses of your own pod plus a management fee to Ponte, shared on the first call">
-              <p>
-                <b>The expenses of your own pod</b>
-              </p>
-              <span aria-hidden="true">+</span>
-              <p>
-                <b>A management fee to Ponte</b>
-              </p>
-              <span aria-hidden="true">=</span>
-              <p>
-                <b>Shared on the first call</b>
-              </p>
-            </div>
+            <p>
+              You cover the expenses of your own pod, plus a management fee to Ponte. We go through the numbers on the
+              first call.
+            </p>
           </article>
         </div>
       </div>
@@ -123,7 +106,7 @@ export function Why() {
   )
 }
 
-/* ------------------------------------------------------------------ How */
+/* ------------------------------------------------------------- Process */
 
 const STEPS: [string, string][] = [
   ['Talk', 'Tell us where you are and where you want to be. No obligation.'],
@@ -139,7 +122,7 @@ export function How() {
         <h2 className="section__head">Four steps from hello to growing.</h2>
         <ol className="steps">
           {STEPS.map(([title, text]) => (
-            <li key={title}>
+            <li key={title} data-reveal>
               <h3>{title}</h3>
               <p>{text}</p>
             </li>
@@ -154,8 +137,8 @@ export function How() {
 
 export function About() {
   return (
-    <section id="about" className="section section--band">
-      <div className="container split split--about">
+    <section id="about" className="section section--tint">
+      <div className="container about">
         <div className="about__text">
           <h2>Why we built Ponte.</h2>
           <p className="lead">
@@ -166,7 +149,7 @@ export function About() {
         </div>
         <div className="founders">
           <figure>
-            <Slot name="founder-1" className="founders__photo" sizes="(min-width: 60rem) 20vw, 45vw" />
+            <Slot name="founder-1" className="founders__photo" sizes="(min-width: 60rem) 22vw, 45vw" />
             <figcaption>
               <span className="fill" data-fill="first founder's name and role">
                 Founder name and role
@@ -174,7 +157,7 @@ export function About() {
             </figcaption>
           </figure>
           <figure>
-            <Slot name="founder-2" className="founders__photo" sizes="(min-width: 60rem) 20vw, 45vw" />
+            <Slot name="founder-2" className="founders__photo" sizes="(min-width: 60rem) 22vw, 45vw" />
             <figcaption>
               <span className="fill" data-fill="second founder's name and role">
                 Founder name and role
@@ -226,8 +209,8 @@ const FAQ: [string, string][] = [
 export function Faq() {
   return (
     <section id="faq" className="section">
-      <div className="container split split--rows">
-        <div className="split__head">
+      <div className="container faqwrap">
+        <div className="faqwrap__head">
           <h2>Questions you may have.</h2>
           <p>
             Something else?{' '}

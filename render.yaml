@@ -1,0 +1,21 @@
+# Render Blueprint for the Ponte API (FastAPI). Free plan: the service sleeps after about 15 minutes idle (first
+# request after that takes about a minute) and its disk is not kept between restarts, so the SQLite file is temporary.
+services:
+  - type: web
+    name: ponte-api
+    runtime: python
+    plan: free
+    branch: ui-ux-pro
+    rootDir: backend
+    buildCommand: pip install -r requirements-wsgi.txt uvicorn
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: ALLOWED_ORIGINS
+        value: https://rickychavan.github.io
+      - key: DATABASE_PATH
+        value: /tmp/ponte.db
+      - key: ADMIN_TOKEN
+        generateValue: true

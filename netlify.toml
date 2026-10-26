@@ -1,0 +1,5 @@
+# The website lives in frontend/ (React + Vite); install its dependencies, build it and publish its dist/ folder.
+[build]
+  base = "frontend"
+  command = "npm ci && npm run build"
+  publish = "dist"
